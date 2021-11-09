@@ -423,6 +423,8 @@ def order_sync():
                         order_header.order_date = each['order_date']
                         order_header.depo_code = depo
                         order_header.customer_code = customer
+                        order_header.customer = customer.customer_code
+                        order_header.fs_code = each['dsr']
                         order_header.is_sync = True
                         order_header.save(update_fields=['order_date', 'depo_code',
                                                          'customer_code', 'is_sync'])

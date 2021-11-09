@@ -917,7 +917,7 @@ class ChequeDishonorDetails(base_models.AuditModel):
             'cheque_no': self.cheque_no or "",
             'cheque_date': str(self.cheque_date or ""),
             'customer_code': str(self.customer_code or ""),
-            'cheque_amount': str(self.cheque_amount or ""),
+            'cheque_amount': self.cheque_amount or 0,
             'bank_name': self.bank_name or "",
             'created_user': self.created_user or "",
             'creation_date': str(self.creation_date or ""),
