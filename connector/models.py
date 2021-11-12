@@ -301,7 +301,7 @@ class CustomerMaster(base_models.AuditModel):
             "customer_add1": self.customer_add1 or "",
             "customer_add2": self.customer_add2 or "",
             "customer_city": self.customer_city or "",
-            "customer_pincode": str(self.customer_pincode)  or "",
+            "customer_pincode": self.customer_pincode.encode('ascii', 'ignore').strip() or "",
             "state_code": self.state_code or "",
             "customer_phonenumber": self.customer_phonenumber,
             "customer_mail": self.customer_mail or "",
@@ -718,10 +718,10 @@ class CollectionHeader(base_models.AuditModel):
             'bcgs_code': str(self.bcgs_code or ""),
             'bint_code': self.bint_code or 0,
             'deposit_flag': str(self.deposit_flag or ""),
-            'bounce_flag': str(self.bonus_flag or ""),
+            'bounce_flag': self.bonus_flag or 0,
             'round_plus': str(self.round_plus or ""),
             'round_minus': str(self.round_minus or ""),
-            'c_flag': str(self.c_flag or ""),
+            'c_flag': self.c_flag or 0,
             'cash_receipt_number': str(self.cash_receipt_number or ""),
             'cash_receipt_date': str(self.cash_receipt_date or ""),
             'remarks': self.remarks or "",
@@ -933,3 +933,4 @@ class ChequeDishonorDetails(base_models.AuditModel):
             'recept_no': str(self.recept_id.receipt_number if self.recept_id else ""),
             'is_sync': self.is_sync
         }
+

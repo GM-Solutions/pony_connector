@@ -47,6 +47,9 @@ def data_sync():
     print "Payment Adjustment sync initiated at {}".format(datetime.now())
     payment_adjustment_sync()
     print "Payment Adjustment sync completed at {}".format(datetime.now())
+    print "Cheque Dishonour sync initiated at {}".format(datetime.now())
+    cheque_dishonour_sync()
+    print "Cheque Dishonour sync completed at {}".format(datetime.now())
 
 def product_sync():
     unsynced_products = list(ProductMaster.objects.filter(
