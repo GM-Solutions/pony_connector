@@ -437,8 +437,10 @@ def order_sync():
                             order_date=each['order_date'],
                             depo_code=depo,
                             customer_code=customer,
+                            customer=customer.customer_code,
                             order_created_date=each['order_date'],
                             status='Y',
+                            fs_code = each['dsr'],
                             order_value=0,
                             is_sync=True)
                     total_price = 0
