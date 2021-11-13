@@ -359,7 +359,7 @@ class OrderHeader(base_models.AuditModel):
     customer_code = models.ForeignKey(CustomerMaster, db_column='CUSTCODEID')
     customer = models.IntegerField(db_column='CUSTCODE', null=True, blank=True)
     depo_code = models.ForeignKey(DepoMaster, db_column='DEPOCODE')
-    customer_reference_number = models.CharField(max_length=50, null=True, blank=True, db_column='CUSREFNO')
+    customer_reference_number = models.CharField(max_length=150, null=True, blank=True, db_column='CUSREFNO')
     customer_reference_date = models.DateField(null=True, blank=True, db_column='CUSREFDT')
     fs_code = models.CharField(null=True, blank=True, max_length=10, db_column='FSCODE')
     order_value = models.FloatField(db_column='ORDVAL')
