@@ -354,6 +354,7 @@ class DepoSalesRep(base_models.AuditModel):
 class OrderHeader(base_models.AuditModel):
     id = models.AutoField(primary_key=True, db_column='ID')
     order_number = models.IntegerField(null=False, blank=True, db_column='OPNO', default=0)
+    # need to be varchar after migrate- SFAOPNO and FSCODE
     sfa_order_number = models.CharField(max_length=100, null=True, blank=True, db_column='SFAOPNO')
     order_date = models.DateField(db_column='OPDT')
     customer_code = models.ForeignKey(CustomerMaster, db_column='CUSTCODEID')
