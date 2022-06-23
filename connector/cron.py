@@ -447,8 +447,8 @@ def order_sync():
                     for detail in each['details']:
                         product = ProductMaster.objects.get(
                             product_code=detail['part_number__part_number'])
-                        quantity = int(detail['quantity'])
-                        price = int(detail['line_total']) if detail['line_total'] else 0
+                        quantity = float(detail['quantity'])
+                        price = float(detail['line_total']) if detail['line_total'] else 0
                         try:
                             order_detail = OrderDetails.objects.get(order=order_header,
                                                                     product_code=product)
