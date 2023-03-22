@@ -77,7 +77,7 @@ class TariffMaster(base_models.AuditModel):
 class ProductMaster(base_models.AuditModel):
     product_code = models.IntegerField(primary_key=True, db_column='PRODCODE')
     description = models.CharField(max_length=60, db_column='PRODDESC')
-    size = models.CharField(max_length=10, db_column='PSIZE')
+    size = models.CharField(max_length=20, db_column='PSIZE')
     length = models.CharField(max_length=10, db_column='PRODLENG')
     count = models.IntegerField(db_column='PRODCNT', null=True)
     unit = models.CharField(max_length=5, db_column='UNIT')
