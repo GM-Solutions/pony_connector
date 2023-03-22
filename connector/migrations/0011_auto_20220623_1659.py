@@ -42,4 +42,9 @@ class Migration(migrations.Migration):
             name='ware_house_qty',
             field=models.FloatField(blank=True, db_column='WH_TRFQTY', null=True),
         ),
+        migrations.AlterField(
+            model_name='productmaster',
+            name='size',
+            field=models.CharField(db_column='PSIZE', max_length=20),
+        ),
     ]
